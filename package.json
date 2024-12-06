@@ -1,0 +1,39 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build:sass": "sass --no-source-map src/scss:src/css",
+    "watch:sass": "sass --no-source-map --watch src/scss:src/css",
+    "dev:next": "next dev --turbopack",
+    "dev": "npm-run-all --parallel watch:sass dev:next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2",
+    "fusionable": "^0.1.1",
+    "mermaid": "^11.4.1",
+    "next": "15.0.3",
+    "playright": "^0.0.22",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rehype-katex": "^7.0.1",
+    "rehype-mermaid": "^3.0.0",
+    "rehype-raw": "^7.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "remark-mermaid": "^0.2.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "sass": "^1.82.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  }
+}

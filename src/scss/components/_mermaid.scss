@@ -1,0 +1,44 @@
+@use "../abstract/sizes" as sizes;
+.mermaid {
+    // General diagram styles
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    max-width: sizes.$diagram-max-width;
+    // Node styles
+    .node {
+        rect,
+        circle {
+            fill: #fff;
+            stroke: #999;
+            stroke-width: 1px;
+        }
+        text {
+            fill: #333;
+        }
+    }
+
+    // Subgraph styles
+    .cluster {
+        rect {
+            fill: #f4f4f4;
+            stroke: #ddd;
+            rx: 5px;
+            ry: 5px;
+        }
+        .label {
+            fill: #666;
+        }
+    }
+
+    // Edge styles
+    .edgePath {
+        path {
+            stroke: #999;
+            stroke-width: 1px;
+        }
+    }
+}
+.with_mermaid {
+    max-width: 200vw;
+    margin: auto;
+}
