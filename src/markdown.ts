@@ -10,7 +10,6 @@ import remarkGfm from "remark-gfm";
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
-import rehypeMermaid from "rehype-mermaid";
 
 export async function getMarkdownContent(filePath: string) {
   const fullPath = path.join(process.cwd(), filePath);
@@ -22,12 +21,11 @@ export async function getMarkdownContent(filePath: string) {
 
   const processedContent = await unified()
     .use(remarkParse)
-    .use(remarkGfm)
     .use(remarkMath)
+    .use(remarkGfm)
     .use(remarkRehype, {
       allowDangerousHtml: true,
     })
-    //.use(rehypeMermaid)
     .use(rehypeRaw)
     .use(rehypeKatex)
     .use(rehypeStringify)

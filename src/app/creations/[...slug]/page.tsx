@@ -1,7 +1,7 @@
 import { getMarkdownContent } from "@/markdown";
 import fs from "fs";
 import path from "path";
-import TutorialClient from "./TutorialClient";
+import TutorialClient from "@/app/components/TutorialClient";
 
 // Generate static params
 export async function generateStaticParams() {

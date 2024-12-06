@@ -12,7 +12,7 @@ export default function SideBar() {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        <h2>Template roadmap</h2>
+        <h3>Template roadmap</h3>
       </div>
 
       <nav className="sidebar__nav">

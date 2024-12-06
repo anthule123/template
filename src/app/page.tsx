@@ -5,7 +5,7 @@ import FusionCollection from "fusionable/FusionCollection";
 export default function HomePage() {
   return (
     <main>
-      <h1>Blog Posts</h1>
+      <h1>Pracman</h1>
     </main>
   );
 }

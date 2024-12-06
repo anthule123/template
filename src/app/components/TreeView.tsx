@@ -1,6 +1,6 @@
 // components/TreeView.tsx
 "use client";
-import { TreeNode } from "@/lib/types";
+import { TreeNode } from "@/app/lib/types";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import treeView from "@/css/components/TreeView.module.css";

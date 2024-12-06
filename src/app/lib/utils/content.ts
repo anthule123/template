@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import fg from "fast-glob";
-import { TreeNode } from "@/lib/types";
+import { TreeNode } from "@/app/lib/types";
 export function getContentTree(): TreeNode {
   const files = fg.sync("src/content/creations/**/*.md", { dot: true });
 

@@ -13,23 +13,33 @@ Inline math: $x = y + 2$
 
 Display math:
 $$
-f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d\xi
+  f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d\xi
 $$
 
 ## Matrix
 
+Ma tran
 $$
-\begin{pmatrix}
+\begin{bmatrix}
+a & b \\
+
+c & d
+\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}
 a & b \\
 c & d
-\end{pmatrix}
+\end{bmatrix}
 $$
 
 ## Equations
 
 The quadratic formula:
+
 $$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
 
 ## Greek Letters

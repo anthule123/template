@@ -14,7 +14,9 @@ h6 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-p {
+p,
+ul,
+li {
   font-family: var(--font-garamond);
 }
 
@@ -70,37 +72,48 @@ p {
   font-variant-numeric: lining-nums; /* Makes numbers same height as capitals */
 }
 
-.mermaid {
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  max-width: 2000px;
-}
-.mermaid .node rect,
-.mermaid .node circle {
-  fill: #fff;
-  stroke: #999;
-  stroke-width: 1px;
-}
-.mermaid .node text {
-  fill: #333;
-}
-.mermaid .cluster rect {
-  fill: #f4f4f4;
-  stroke: #ddd;
-  rx: 5px;
-  ry: 5px;
-}
-.mermaid .cluster .label {
-  fill: #666;
-}
-.mermaid .edgePath path {
-  stroke: #999;
-  stroke-width: 1px;
+header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 25px;
 }
 
-.with_mermaid {
-  max-width: 200vw;
-  margin: auto;
+.mermaid {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.mermaid .subgraph > .label {
+  color: #2d3748 !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
+  font-family: "Poppins", sans-serif;
+}
+.mermaid g.node:nth-of-type(1) rect {
+  fill: #4299e1 !important;
+  stroke: #2b6cb0 !important;
+  stroke-width: 2px;
+}
+.mermaid g.node:nth-of-type(2) rect {
+  fill: #667eea !important;
+  stroke: #5a67d8 !important;
+  stroke-width: 2px;
+}
+.mermaid .node {
+  transition: all 0.3s ease;
+}
+.mermaid .node span {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+.mermaid .edgePath {
+  stroke: #a0aec0 !important;
+  stroke-width: 2px !important;
+}
+.mermaid .edgePath marker {
+  fill: #a0aec0 !important;
 }
 
 :root .dual_layout {
