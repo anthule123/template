@@ -2,6 +2,7 @@ import { getMarkdownContent } from "@/markdown";
 import fs from "fs";
 import path from "path";
 import TutorialClient from "@/app/components/TutorialClient";
+import { Suspense } from "react";
 
 // Generate static params
 export async function generateStaticParams() {
@@ -13,18 +14,24 @@ export async function generateStaticParams() {
     slug: [filename.replace(".md", "")], // Wrap in array
   }));
 }
-
+type Props = {
+  params: Promise<{
+    slug: string[];
+  }>;
+};
 // This is now the main page component
-export default async function TutorialPage({
-  params,
-}: {
-  params: { slug: string[] };
-}) {
+export default async function TutorialPage({ params }: Props) {
   // Join slug array with '/' to create path
-  const slugPath = params.slug.join("/");
+  const slugList = await params;
+  console.log(slugList);
+  const slugPath = slugList.slug.join("/");
   const { content, metadata } = await getMarkdownContent(
     `src/content/creations/${slugPath}.md`,
   );
   console.log(metadata);
-  return <TutorialClient content={content} metadata={metadata} />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TutorialClient content={content} metadata={metadata} />
+    </Suspense>
+  );
 }
