@@ -18,13 +18,18 @@ export async function generateStaticParams() {
 export default async function TutorialPage({
   params,
 }: {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 }) {
   // Join slug array with '/' to create path
-  const slugPath = params.slug.join("/");
-  const { content, metadata } = await getMarkdownContent(
-    `src/content/creations/${slugPath}.md`,
-  );
-  console.log(metadata);
-  return <TutorialClient content={content} metadata={metadata} />;
+  try {
+    const slugPath = (await params).slug.join("/");
+    const { content, metadata } = await getMarkdownContent(
+      `src/content/creations/${slugPath}.md`,
+    );
+    console.log(metadata);
+    return <TutorialClient content={content} metadata={metadata} />;
+  } catch (error) {
+    console.error("Error loading tutorial content:", error);
+    return <div>Error loading tutorial content. Please try again later.</div>;
+  }
 }
