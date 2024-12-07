@@ -1,7 +1,7 @@
 ---
-title: "mermer"
+title: "mermaid"
 date: "2023-10-01"
-slug: ["mermer"]
+slug: ["mermaid"]
 highlight: true
 ---
 

@@ -3,14 +3,6 @@ import { useEffect } from "react";
 import mermaid from "mermaid";
 
 const Header = () => {
-  useEffect(() => {
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: "default",
-      securityLevel: "loose",
-    });
-  }, []);
-
   return (
     <header>
       <h1>PRACMAN</h1>
