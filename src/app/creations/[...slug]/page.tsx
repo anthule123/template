@@ -4,14 +4,39 @@ import path from "path";
 import TutorialClient from "@/app/components/TutorialClient";
 import { Suspense } from "react";
 
+function getAllDocPaths(dir: string, basePath: string[] = []): string[][] {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  let paths: string[][] = [];
+
+  for (const entry of entries) {
+    if (entry.name.startsWith(".")) continue; // Bỏ qua hidden files
+
+    const fullPath = path.join(dir, entry.name);
+    const relativePath = entry.name.replace(/\.mdx?$/, ""); // Bỏ extension
+
+    if (entry.isDirectory()) {
+      // Thêm directory path
+      paths.push([...basePath, relativePath]);
+      // Đệ quy vào subdirectories
+      paths = paths.concat(
+        getAllDocPaths(fullPath, [...basePath, relativePath]),
+      );
+    } else if (entry.name.endsWith(".mdx") || entry.name.endsWith(".md")) {
+      // Thêm file path
+      paths.push([...basePath, relativePath]);
+    }
+  }
+
+  return paths;
+}
 // Generate static params
 export async function generateStaticParams() {
-  const files = fs.readdirSync(
-    path.join(process.cwd(), "src/content/creations"),
-  );
+  const files = path.join(process.cwd(), "src/content/creations");
 
-  return files.map((filename: string) => ({
-    slug: [filename.replace(".md", "")], // Wrap in array
+  const paths = getAllDocPaths(files);
+
+  return paths.map((slug) => ({
+    slug: slug,
   }));
 }
 type Props = {
