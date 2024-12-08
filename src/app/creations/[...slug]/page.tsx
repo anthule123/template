@@ -30,11 +30,7 @@ async function TutorialPage({ params }: Props) {
       `src/content/creations/${slugPath}.md`,
     );
     console.log(metadata);
-    return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <TutorialClient content={content} metadata={metadata} />
-      </Suspense>
-    );
+    return <TutorialClient content={content} metadata={metadata} />;
   } catch (error) {
     console.error("Error loading tutorial:", error);
     return (
