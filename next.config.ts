@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  //output: "export", // Thêm dòng này
+  output: "export", // Thêm dòng này
   // Thêm cấu hình để generate các dynamic routes
   generateStaticParams: async () => {
     // Đây là nơi bạn định nghĩa tất cả các dynamic paths
