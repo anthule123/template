@@ -1,7 +1,7 @@
 ---
-title: "Mermaid"
+title: "mermaid"
 date: "2023-10-01"
-slug: "mermaid"
+slug: ["mermaid"]
 highlight: true
 ---
 
@@ -58,21 +58,4 @@ graph TB
     Database -->  pg_image
     Publish --> pub_image
 
-
 </pre>
-
-```mermaid
-graph TD
-    A[Start] --> B{Is it working?}
-    B -->|Yes| C[Great!]
-    B -->|No| D[Debug]
-    D --> B
-```
-
-```
-graph TD
-    A[Start] --> B{Is it working?}
-    B -->|Yes| C[Great!]
-    B -->|No| D[Debug]
-    D --> B
-```

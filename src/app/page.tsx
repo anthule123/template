@@ -4,8 +4,8 @@ import FusionCollection from "fusionable/FusionCollection";
 
 export default function HomePage() {
   return (
-    <main>
+    <article>
       <h1>Pracman</h1>
-    </main>
+    </article>
   );
 }
