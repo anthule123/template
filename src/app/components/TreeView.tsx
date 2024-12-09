@@ -7,7 +7,7 @@ import treeView from "@/css/components/TreeView.module.css";
 
 export default function TreeView({ data }: { data: TreeNode }) {
   const pathname = usePathname();
-  const isActive = pathname === data.path;
+  const isActive = decodeURI(pathname) === decodeURI(data.path);
 
   if (data.isFile) {
     return (
