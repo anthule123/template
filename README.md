@@ -24,16 +24,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Giới thiệu
 
-Đây là template tạo website từ markdown với tính năng tự động tạo cấu trúc thư mục (folder-like navigation). 
+Đây là template tạo website từ markdown với tính năng tự động tạo cấu trúc thư mục (folder-like navigation).
 
-Ví dụ: Khi bạn tạo file markdown ở đường dẫn `creations/a/b/c.md`, sidebar sẽ tự động hiển thị:
+Ví dụ: Khi bạn tạo file markdown ở đường dẫn `creations/a/b/Cá chép.md`, sidebar sẽ tự động hiển thị:
 
 ```
 creations
     |
     a
     └── b
-        └── c
+        └── Cá chép
 ```
 
 Các tính năng chính:
@@ -41,3 +41,4 @@ Các tính năng chính:
 - Navigation dễ dàng qua sidebar
 - Hỗ trợ nested folders không giới hạn độ sâu
 - Tương thích với các markdown editor phổ biến
+- Tên thư mục và file có thể viết tiếng Việt có dấu và chứa dấu cách
