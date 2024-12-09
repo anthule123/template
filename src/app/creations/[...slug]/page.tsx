@@ -49,12 +49,11 @@ async function TutorialPage({ params }: Props) {
   try {
     // Join slug array with '/' to create path
     const slugList = await params;
-    console.log(slugList);
+    slugList.slug = slugList.slug.map((segment) => decodeURIComponent(segment));
     const slugPath = slugList.slug.join("/");
     const { content, metadata } = await getMarkdownContent(
       `src/content/creations/${slugPath}.md`,
     );
-    console.log(metadata);
     return <TutorialClient content={content} metadata={metadata} />;
   } catch (error) {
     console.error("Error loading tutorial:", error);
@@ -66,7 +65,6 @@ async function TutorialPage({ params }: Props) {
     );
   }
 }
-
 export default function Page({ params }: Props) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
