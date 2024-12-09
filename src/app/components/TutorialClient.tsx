@@ -56,20 +56,11 @@ export default function TutorialClient({
   }, [content]); // Thêm content vào dependencies
 
   const processContent = (rawContent: string) => {
-    // Xử lý inline math ($...$)
-    let processedContent = rawContent.replace(
-      /\$([^\$]+)\$/g,
-      '<span class="math">$1</span>',
-    );
-
-    // Xử lý block math ($$...$$)
-    processedContent = processedContent.replace(
-      /\$\$([^\$]+)\$\$/g,
-      '<div class="math-block">$1</div>',
-    );
+    let processedContent = rawContent;
 
     return processedContent;
   };
+
   return (
     <article>
       <div dangerouslySetInnerHTML={{ __html: processContent(content) }} />

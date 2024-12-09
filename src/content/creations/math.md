@@ -42,6 +42,8 @@ $$
 x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
 
+
+
 ## Greek Letters
 
 - Alpha: $\alpha$
@@ -84,3 +86,61 @@ $$
 $$
 \sin^2 \theta + \cos^2 \theta = 1
 $$
+
+## Cách sử dụng dấu dollar \$
+
+### 1. Inline Math
+
+Để viết công thức toán học trong dòng, dùng một cặp dấu dollar:
+
+Input: `$f(x) = ax + b$ `
+
+Output: $f(x) = ax + b$
+
+### 2. Block Math
+Để viết công thức toán học dạng block (hiển thị ở dòng riêng), dùng hai cặp dấu dollar:
+
+Input:
+```
+$$ f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-x^2/2} dx $$
+```
+
+Output:
+$$ f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-x^2/2} dx $$
+
+### 3. Align
+Input:
+```
+$$
+\begin{align}
+a &= b + c \\
+a - c &= b
+\end{align}
+$$
+```
+Ouput:
+$$
+\begin{align}
+a &= b + c \\
+a - c &= b
+\end{align}
+$$
+
+
+### 4. Escape Dollar Sign (\$)
+
+Để hiển thị dấu dollar (\$) như một ký tự thông thường, có thể:
+
+1. Thêm dấu backslash (\\) phía trước: `\$`
+
+Lưu ý:
+- Không nên sử dụng $ đơn lẻ mà không có \ đứng trước
+- Luôn đóng/mở cặp $ đầy đủ khi viết công thức toán
+
+| Input ----------------| Output |
+|-------|--------|
+| `\$ f(x) \$` | \$ f(x) \$ |
+| `$ f(x) $` | $ f(x) $ |
+| `($ f(x) $)` | ($ f(x) $) |
+| `\$($ f(x) $)` | \$($ f(x) $) |
+| `($) f(x) ($)` | ($) f(x) ($) |
