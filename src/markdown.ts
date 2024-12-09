@@ -16,8 +16,6 @@ export async function getMarkdownContent(filePath: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const { data, content } = matter(fileContents);
-  console.log("data", data);
-  console.log("content", content);
 
   const processedContent = await unified()
     .use(remarkParse)
